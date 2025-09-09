@@ -4,7 +4,7 @@ namespace balaji.project;
 
 entity Supplier : cuid ,managed{
     name : String not null;
-    taxNumber : String;
+    taxNumber : String @assert.unique;// put directly on field
     address: String not null;
     email: EMailAddress not null;
     phone: PhoneNumber;
@@ -13,11 +13,11 @@ entity Supplier : cuid ,managed{
         Inactive
     } not null;
 }
-entity PurchaseOrder: cuid,managed,{
-    orderNumber:String not null;
+entity PurchaseOrder: cuid,managed{
+    orderNumber:String not null @assert.unique;
     supplier: Association to Supplier not null;
-    orderDate: Date;
-    expectedDeliveryDate: Date;
+    orderDate: Date not null;
+    expectedDeliveryDate: Date;// validation in srv
     status: String enum{
         Pending;
         Confirmed;
@@ -25,16 +25,16 @@ entity PurchaseOrder: cuid,managed,{
         Delivered;
         Cancelled
     }not null;
-    totalAmount: Decimal(15,2) default 0;
-    currency: Currency;
+    totalAmount: Decimal(15,2) default 0 @assert.range: { min: 0 };
+    currency: Currency @cds.default: 'INR';
 }
 entity PurchaseOrderItem:cuid,managed{
     purchaseOrder:Association to PurchaseOrder not null;
-    itemNumber: Integer;
+    itemNumber: Integer not null @assert.range: { min: 1 } @assert.unique: [purchaseOrder, itemNumber]; // composite unique key with purchaseOrder
     productCode: String not null;
     description: String;
-    quantity: Decimal(15,2);
-    unitPrice: Decimal(15,2);
+    quantity: Decimal(15,2)not null @assert.range: { min: 1 };
+    unitPrice: Decimal(15,2)not null @assert.range: { min: 0 };
     lineTotal: Decimal(15,2);
     // this.before(['CREATE', 'UPDATE'], 'PurchaseOrderItem', each => {
     // each.lineTotal = (each.quantity || 0) * (each.unitPrice || 0);
@@ -44,8 +44,8 @@ entity PurchaseOrderItem:cuid,managed{
 
 entity Shipment: cuid,managed{
     purchaseOrderItem: Association to PurchaseOrderItem not null;
-    shipmentDate: Date not null;
-    quantityShipped: Decimal(15,2) not null;
+    shipmentDate: Date not null; // srv validation against PO.orderDate
+    quantityShipped: Decimal(15,2) not null @assert.range: { min: 1 }; // srv validation against POItem.quantity
     carrier: String;
     trackingNumber: String;
     status: String enum{
@@ -59,41 +59,15 @@ entity Shipment: cuid,managed{
 entity Attachment : cuid, managed {
     attachedToPO     : Association to PurchaseOrder;
     attachedToPOItem : Association to PurchaseOrderItem;
-
+    // Either attachedToPO or attachedToPOItem must be set, but not both
     filename   : String(255) not null;
     fileType   : String(50);        // e.g. "invoice", "spec", "image"
     fileURL    : String(500) not null;
 }
 
-// Uniqueness constraint on taxNumber (optional field)
-@assert.unique: { taxNumber: [ taxNumber ] }
-@assert.unique: { orderNumber: [ orderNumber ] }
-
-@assert.unique: { PO_Item: [ purchaseOrder, itemNumber ] }
-
-
 type EMailAddress : String @assert.format : '^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$';
 type PhoneNumber  : String @assert.format : '^\\+?[1-9]\\d{1,14}$';
 
-annotate PurchaseOrder with {
-    expectedDeliveryDate @assert.range:{min: orderDate};
-    totalAmount @assert.range:{min: 0};
-    currency @cds.default: 'INR'
-}
-annotate PurchaseOrderItem with {
-    quantity @assert.range:{min: 1};
-    unitPrice @assert.range:{min: 0};
-    itemNumber @assert.range:{min: 1};
-};
-annotate Shipment with {
-    shipmentDate @assert.range:{min: orderDate};
-    quantityShipped @assert.range:{
-        min:0,
-        max:quantity//CDS handles basic constraints (types, enums, mandatory fields, ranges)
-        //CAP service logic enforces cross-entity rules (dates, remaining qty)
-    };
-
-};
 
 
 

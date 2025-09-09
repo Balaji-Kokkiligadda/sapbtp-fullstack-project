@@ -1,4 +1,21 @@
-ID,name,taxNumber,address,email,phone,status
-11111111-1111-1111-1111-111111111111,ABC Traders,GSTIN12345,"Bangalore, India",contact@abctraders.com,+919876543210,Active
-22222222-2222-2222-2222-222222222222,XYZ Supplies,VAT67890,"Hyderabad, India",info@xyzsupplies.com,+918765432109,Active
-33333333-3333-3333-3333-333333333333,Global Parts Ltd,,"Chennai, India",sales@globalparts.com,,Inactive
+ID,name,taxNumber,address,email,phone,status,createdAt,createdBy,modifiedAt,modifiedBy
+0fecf1b2-0611-4696-912f-7ecf8dd8e971,Supplier 1,GSTIN00001,"1 Main Street, City 1",supplier1@mail.com,+919876543201,Inactive,2025-09-09T13:02:04.608058,admin,2025-09-09T13:02:04.608080,admin
+b4d22b0e-1b7e-4943-8695-cdfc4f623cc3,Supplier 2,GSTIN00002,"2 Main Street, City 2",supplier2@mail.com,+919876543202,Inactive,2025-09-09T13:02:04.608110,admin,2025-09-09T13:02:04.608113,admin
+840eaf33-1bf7-4a01-af39-b4fd922b9e92,Supplier 3,GSTIN00003,"3 Main Street, City 3",supplier3@mail.com,+919876543203,Inactive,2025-09-09T13:02:04.608156,admin,2025-09-09T13:02:04.608160,admin
+ee7bd1b0-6673-47c8-955c-63609a6ed90a,Supplier 4,GSTIN00004,"4 Main Street, City 4",supplier4@mail.com,+919876543204,Active,2025-09-09T13:02:04.608213,admin,2025-09-09T13:02:04.608216,admin
+f853dd89-709c-4d60-8fe9-8c3cfac25a51,Supplier 5,GSTIN00005,"5 Main Street, City 5",supplier5@mail.com,+919876543205,Inactive,2025-09-09T13:02:04.608233,admin,2025-09-09T13:02:04.608235,admin
+2e196f6c-eece-4e9c-94bc-518c375d2739,Supplier 6,GSTIN00006,"6 Main Street, City 6",supplier6@mail.com,+919876543206,Active,2025-09-09T13:02:04.608247,admin,2025-09-09T13:02:04.608249,admin
+a55f9364-8f4f-47b8-8889-1a3089905258,Supplier 7,GSTIN00007,"7 Main Street, City 7",supplier7@mail.com,+919876543207,Active,2025-09-09T13:02:04.608268,admin,2025-09-09T13:02:04.608270,admin
+8078923e-2a2c-41e6-b5ce-6c4ee2a84f98,Supplier 8,GSTIN00008,"8 Main Street, City 8",supplier8@mail.com,+919876543208,Active,2025-09-09T13:02:04.608285,admin,2025-09-09T13:02:04.608287,admin
+da07bb58-e3bb-402a-864e-321e1395f360,Supplier 9,GSTIN00009,"9 Main Street, City 9",supplier9@mail.com,+919876543209,Active,2025-09-09T13:02:04.608297,admin,2025-09-09T13:02:04.608300,admin
+26ca28f4-d394-4d32-80e4-84b0fcfb92d2,Supplier 10,GSTIN00010,"10 Main Street, City 10",supplier10@mail.com,+919876543210,Active,2025-09-09T13:02:04.608311,admin,2025-09-09T13:02:04.608314,admin
+3695ee71-228d-45b9-a4fb-724677d5eb90,Supplier 11,GSTIN00011,"11 Main Street, City 11",supplier11@mail.com,+919876543211,Inactive,2025-09-09T13:02:04.608324,admin,2025-09-09T13:02:04.608326,admin
+5f30ca27-c139-4af9-8e0d-1de08c66d05d,Supplier 12,GSTIN00012,"12 Main Street, City 12",supplier12@mail.com,+919876543212,Active,2025-09-09T13:02:04.608362,admin,2025-09-09T13:02:04.608364,admin
+f27a55a5-f955-4aa6-bfde-759ffaa19926,Supplier 13,GSTIN00013,"13 Main Street, City 13",supplier13@mail.com,+919876543213,Active,2025-09-09T13:02:04.608378,admin,2025-09-09T13:02:04.608381,admin
+0965897f-1ab5-4ec9-b1e4-b1d6e5f5b8b2,Supplier 14,GSTIN00014,"14 Main Street, City 14",supplier14@mail.com,+919876543214,Active,2025-09-09T13:02:04.608391,admin,2025-09-09T13:02:04.608393,admin
+0ac9a372-eaab-43b8-98b1-948d9db0f000,Supplier 15,GSTIN00015,"15 Main Street, City 15",supplier15@mail.com,+919876543215,Active,2025-09-09T13:02:04.608404,admin,2025-09-09T13:02:04.608406,admin
+cbba4567-829b-4989-9ba6-c76ed3fe05dd,Supplier 16,GSTIN00016,"16 Main Street, City 16",supplier16@mail.com,+919876543216,Inactive,2025-09-09T13:02:04.608416,admin,2025-09-09T13:02:04.608418,admin
+5719dca6-d671-4523-91d4-66a6e3cd6a7d,Supplier 17,GSTIN00017,"17 Main Street, City 17",supplier17@mail.com,+919876543217,Active,2025-09-09T13:02:04.608428,admin,2025-09-09T13:02:04.608430,admin
+d92c844b-eed1-46fa-8da2-c99073178762,Supplier 18,GSTIN00018,"18 Main Street, City 18",supplier18@mail.com,+919876543218,Inactive,2025-09-09T13:02:04.608444,admin,2025-09-09T13:02:04.608447,admin
+ee918167-27cc-4e8b-a231-f06c0c7d757e,Supplier 19,GSTIN00019,"19 Main Street, City 19",supplier19@mail.com,+919876543219,Active,2025-09-09T13:02:04.608461,admin,2025-09-09T13:02:04.608465,admin
+238acb4d-7eda-4568-8f93-3aad33f314b3,Supplier 20,GSTIN00020,"20 Main Street, City 20",supplier20@mail.com,+919876543220,Inactive,2025-09-09T13:02:04.608486,admin,2025-09-09T13:02:04.608490,admin
