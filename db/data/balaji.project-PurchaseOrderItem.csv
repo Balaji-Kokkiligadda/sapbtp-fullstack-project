@@ -1,0 +1,3 @@
+ID,purchaseOrder_ID,itemNumber,productCode,description,quantity,unitPrice,lineTotal,uom
+item-1111-aaaa-1111-aaaa-111111111111,aaaa1111-aaaa-1111-aaaa-111111111111,1,P100,Steel Rods,100,50,5000,KG
+item-2222-bbbb-2222-bbbb-222222222222,bbbb2222-bbbb-2222-bbbb-222222222222,1,P200,Cement Bags,200,60,12000,BAG

@@ -1,0 +1,3 @@
+ID,attachedToPO_ID,attachedToPOItem_ID,filename,fileType,fileURL
+att-1111-aaaa-1111-aaaa-111111111111,aaaa1111-aaaa-1111-aaaa-111111111111,,Invoice_PO1001.pdf,invoice,https://fileserver.com/invoice_po1001.pdf
+att-2222-bbbb-2222-bbbb-222222222222,,item-2222-bbbb-2222-bbbb-222222222222,Spec_PO1002_Item1.pdf,spec,https://fileserver.com/spec_po1002_item1.pdf
