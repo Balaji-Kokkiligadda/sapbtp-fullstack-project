@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting Started
 
 Welcome to your new project.
@@ -23,3 +24,10 @@ File or Folder | Purpose
 ## Learn More
 
 Learn more at https://cap.cloud.sap/docs/get-started/.
+=======
+# sapbtp-fullstack-project
+A repository that contains sap btp full stack projects
+>>>>>>> 3a1cf499c2ef8ff972f87f1f603639f3e215d51b
+
+# sapbtp-fullstack-project
+Suppliers Portal Project - Initial commit
