@@ -24,9 +24,10 @@ entity PurchaseOrder: cuid,managed{
         Shipped;
         Delivered;
         Cancelled
-    }not null;
+    }not null default 'Pending';
     totalAmount: Decimal(15,2) default 0 @assert.range: { min: 0 };
     currency: Currency @cds.default: 'INR';
+  
 }
 entity PurchaseOrderItem:cuid,managed{
     purchaseOrder:Association to PurchaseOrder not null;

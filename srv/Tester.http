@@ -1,0 +1,13 @@
+### 
+GET http://localhost:4004/odata/v4/SupplierService/PurchaseOrder/6219f04a-19f7-47d4-bd48-c81edf571694
+
+### calling ACTION 
+POST http://localhost:4004/odata/v4/SupplierService/PurchaseOrder/6219f04a-19f7-47d4-bd48-c81edf571694/confirmOrder
+Content-Type: application/json
+
+{}
+### calling ACTION
+POST http://localhost:4004/odata/v4/SupplierService/PurchaseOrder/6219f04a-19f7-47d4-bd48-c81edf571694/cancelOrder
+Content-Type: application/json
+
+{}
