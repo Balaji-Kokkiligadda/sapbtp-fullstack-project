@@ -1,0 +1,55 @@
+<mvc:View
+    controllerName="Supplier.controller.SupplierList"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc">
+
+    <Page
+        title="{i18n>appTitle}"
+        id="page">
+        <Table
+            id="supplierList"
+            class="sapUiResponsiveMargin"
+            width="auto"
+            items="{
+                path : '/Supplier',
+                sorter : {
+                    path : 'status',
+                    group : true
+                }
+            }">
+            <headerToolbar>
+                <Toolbar>
+                    <Title text="{i18n>supplierListTitle}" />
+                    <ToolbarSpacer />
+                    <SearchField width="50%"/>
+                </Toolbar>
+            </headerToolbar>
+            <columns>
+                <Column><Text text="{i18n>columnId}" /></Column>
+                <Column><Text text="{i18n>columnName}" /></Column>
+                <Column><Text text="{i18n>columnTaxNumber}" /></Column>
+                <Column><Text text="{i18n>columnAddress}" /></Column>
+                <Column><Text text="{i18n>columnEmail}" /></Column>
+                <Column><Text text="{i18n>columnPhone}" /></Column>
+                <Column><Text text="{i18n>columnStatus}" /></Column>
+            </columns>
+            <!-- Add this items aggregation -->
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{ID}" />
+                        <Text text="{name}" />
+                        <Text text="{taxNumber}" />
+                        <Text text="{address}" />
+                        <Text text="{email}" />
+                        <Text text="{phone}" />
+                        <Text text="{status}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+
+</mvc:View>

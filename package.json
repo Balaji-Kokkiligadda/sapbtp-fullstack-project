@@ -2,7 +2,10 @@
   "name": "suppliers-portal",
   "version": "1.0.0",
   "description": "A simple CAP project.",
-  "repository": "<Add your repository here>",
+  "repository": {
+    "type": "git",
+    "url": "<Add your repository here>"
+  },
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
@@ -27,5 +30,12 @@
   "scripts": {
     "start": "cds-serve",
     "test": "mocha test --recursive --timeout 10000"
-  }
+  },
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "commonjs"
 }
